@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag @user.picture, width: '250' %>
+</p>
+
+<p>
+  <strong>Blurb:</strong>
+  <%= @user.blurb %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @user.location %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<br><br>
+
+<%= link_to 'Photos', user_photos_path(@user, @photos) %>
+<!--<%= link_to 'New Photo', new_user_photo_path(@user, @photo) %>

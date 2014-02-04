@@ -1,0 +1,32 @@
+<h1>Listing photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Image</th>
+      <th>User</th>
+      <th>Uploaded on</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.title %></td>
+        <td><a href="/users/<%= photo.user.id %>/photos/<%= photo.id %>"><%=image_tag photo.image, width: '300' %><a/></td>
+        <td><a href="/users/<%= photo.user.id %>" ><%= photo.user.name %><br><%= image_tag photo.user.picture, width: '150' %><a/></td>
+        <td><%= photo.created_at %></td>
+        <td><%= link_to 'Show', user_photo_path(@user, photo) if @user %></td>
+        <td><%= link_to 'Edit', edit_user_photo_path(@user, photo) if @user %></td>
+        <td><%= link_to 'Destroy', user_photo_path(@user, photo), method: :delete, data: { confirm: 'Are you sure?' } if @user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Photo', new_user_photo_path(@user) if @user %>

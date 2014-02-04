@@ -1,0 +1,9 @@
+<h1>New comment</h1>
+
+<a href="/users/<%= @photo.user.id %>/photos/<%= @photo.id %>"><%= @photo.title %><br><%= image_tag @photo.image, width: '300' %><a/> 
+
+<!-- user_photo_path(@user, @photo) --> 
+
+<%= render 'form' %>
+
+

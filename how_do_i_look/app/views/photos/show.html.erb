@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @photo.image, width: '300' %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= link_to "#{@photo.user.name}", user_path(@user) %>
+</p>
+
+<%= link_to 'Edit', edit_user_photo_path(@user, @photo) %> |
+<%= link_to 'Photos', user_photos_path(@user) %>
+
+<br><br>
+
+<h2>Comments:</h2>
+<% @photo.comments.each do |comment| %>
+  <p><%= "#{comment.body}" %></p>
+  <p><strong><%= comment.user.name %></strong> posted on <%= comment.created_at %></p>
+
+<% end %>
+
+<%= link_to 'Add a comment', new_user_photo_comment_path(@user, @photo) %>
