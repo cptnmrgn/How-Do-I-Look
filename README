@@ -1,3 +1,0 @@
-This is designed to be an outfit feedback application which allows users to upload images of their outfits and other users to comment and approve or disprove of them.
-
-The current plan is for the basic structure of the underlying database to have 3 resources, Users, Photos, and Comments, although there may be additions in the future.

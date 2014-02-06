@@ -1,0 +1,42 @@
+<div id="profile-page">
+
+  <div id="profile">
+
+      <p id="notice"><%= notice %></p>
+
+      <h2>
+        <%= @user.name %>
+      </h2>
+
+      
+        <%= image_tag @user.picture, width: '250' %>
+      
+
+      <div id="right-prof">
+
+          <p>
+            <strong>Blurb:</strong><br>
+            "<%= @user.blurb %>"
+          </p>
+
+          <p>
+            <strong>Located in:</strong><br>
+            <%= @user.location %>
+          </p>
+          
+          <div id="profile-buttons">
+          <%= link_to 'Edit', edit_user_path(@user), :class => "options" if @this_is_me %> 
+          <%= link_to 'Back', users_path, :class => "options" %>
+          </div>
+
+      </div>
+      
+
+    </div>
+
+    <div id ="photo-buttons">
+      <%= link_to 'Photos', user_photos_path(@user, @photos), :class => "photo-options" %>
+      <%= link_to 'New Photo', new_user_photo_path(@user, @photo), :class => "photo-options" if @this_is_me%>
+    </div>
+
+  </div>

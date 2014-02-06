@@ -1,0 +1,500 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  // background-image: image-url("background-pattern.png");
+  background-color: #E7E7FA;
+  background-color: white;
+  margin: 0px;
+  padding-top: 0px;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+header {
+  background-image: image-url("header_gradient-med.png");
+  height: 70px;
+  color: white;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+
+header a:visited {
+  color: white;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+header a:hover {
+  color: #81FFFA;
+  text-decoration: none;
+  background-color: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+#wrapper {
+  margin: 0 auto;
+  width: 960px;
+  display: block;
+  // padding: 15px 30px 15px 30px;
+  text-align: right;
+}
+
+#container {
+  width: 960px;
+  padding: 30px;
+  margin: 0 auto;
+  background-color: rgba(255,255,255, 1);
+  height: 100%;
+}
+
+#logo {
+  display: block;
+  height: 70px;
+  float: left;
+
+}
+
+#logo h1 {
+  background: url('Logo.svg') no-repeat;
+  margin-top: 7px;
+  height: 70px;
+  width: 300px;
+
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+nav {
+  line-height: 70px;
+  font-size: 18px;
+}
+
+nav a {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: white;
+}
+
+nav a:active {
+  font-size: 20px;
+}
+
+// nav a.current {
+//   font-size: 20px;
+//   color: red;
+// }
+
+#sub-nav {
+  color: #44559f;
+  margin-right: 10px;
+}
+
+#sub-nav a {
+  color: #44559f;
+}
+
+#current_log-in {
+  text-align: left;
+  float: left;
+  font-family: 'Raleway', sans-serif;
+}
+
+// user page
+
+#user {
+  display: block;
+  width: 600px;
+  padding-left: 15px;
+  margin: 2px 5px 3px 0px;
+  float: left;
+  background-color: #edeff4;
+
+}
+
+.thumbnail {
+  width: 300px;
+  float: left;
+}
+
+.user-specs {
+  display: block;
+  float: left;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+#new-user {
+  display:block;
+  width: 150px;
+  height: 40px;
+  background-color: #519600;
+  float:left;
+  position: fixed;
+  top: 155px;
+  margin-left: 625px;
+  line-height: 40px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+
+}
+
+#new-user:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
+
+.options-nav {
+  display: block;
+  width: 300px;
+  float: left;
+  height: 50px;
+
+}
+
+.options {
+  display: block;
+  width: 80px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  margin-right: 5px;
+}
+
+.options:hover {
+  background-color: #81FFFA;
+  color: blue;
+}
+
+// My profile
+
+#profile {
+  display: block;
+  width: 600px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin: 10px 5px 3px 0px;
+  float: left;
+  background-color: #edeff4;
+
+}
+
+#profile-buttons {
+  display: block;
+  width: 200px;
+  height: 40px;
+  float:left;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 15px;
+  
+  
+}
+
+#right-prof {
+  display: block;
+  width: 300px;
+  float: right;
+}
+
+#photo-buttons {
+  display: block;
+  width: 200px;
+  height: 40px;
+  float:left;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.photo-options {
+  display: block;
+  width: 80px;
+  height: 40px;
+  background-color: #519600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  margin-right: 500px;
+  margin-top: 10px;
+}
+
+.photo-options:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
+
+// Photos page
+
+#photo-block {
+  display: block;
+  width: 660px;
+  padding: 20px;
+  margin: 3px 5px 4px 0px;
+  float: left;
+  background-color: #edeff4;
+}
+
+#photo {
+  width: 310px;
+  padding-right: 10px;
+  float: left;
+}
+
+.photo-right {
+  display: block;
+  width: 340px;
+  float: left;
+}
+
+.photo-right h2 {
+  margin-top: 0px;
+}
+
+#right-lower {
+  display: block;
+  margin-top: 35px;
+}
+
+#details {
+  display:block;
+  width: 180px;
+  float:left;
+}
+
+#new-photo {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: #519600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  position: fixed;
+  top: 155px;
+  margin-left: 710px;
+}
+
+#new-photo:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
+
+// Photo Show Page
+
+.approval {
+  color: green;
+  font-size: 1.4em;
+}
+
+.disapproval {
+  color: red;
+  font-size: 1.4em;
+}
+
+.neutral {
+  color: #94A198;
+  font-size: 1.4em;
+}
+
+#photo-show {
+  display: block;
+  width: 500px;
+  padding: 20px;
+  margin: 3px 5px 4px 0px;
+  float: left;
+  background-color: #edeff4;
+
+}
+
+#photo-show h2 {
+  margin-top: 0px;
+}
+
+#likes {
+  display: block;
+  width: 100px;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  // background-color: green;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  border-style: none;
+}
+
+.like {
+  background-color: green;
+}
+.like:hover {
+  background-color: #29FFC3;
+  color: white;
+}
+
+.dislike {
+  background-color: #CC0000;
+}
+
+.dislike:hover {
+  background-color: #FFABA1;
+  color: white;
+}
+
+.tally p {
+  font-size: 15px;
+}
+
+.photo-option {
+  display: block;
+  width: 80px;
+  height: 40px;
+  background-color: #519600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+.photo-option:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
+
+#Comments {
+  display: block;
+  width: 400px;
+  float: left;
+  margin-left: 5px;
+}
+
+.comment {
+  background-color: #edeff4;
+  display: block;
+  width: 400px;
+  float: left;
+  margin-bottom: 10px;
+  
+  padding: 15px;
+}
+
+.add-comment {
+  display: block;
+  width: 140px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  margin-right: 5px;
+}
+
+.add-comment:hover {
+  background-color: #81FFFA;
+  color: blue;
+}
+
+.comment-button {
+  display: block;
+  width: 80px;
+  height: 40px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.edit.comment-button {
+  background-color: green;
+}
+
+.edit.comment-button:hover {
+  background-color: #29FFC3;
+  color: white;
+}
+
+.destroy.comment-button {
+  background-color: #CC0000;
+}
+.destroy.comment-button:hover {
+  background-color: #FFABA1;
+  color: white;
+}
+
+.create-comment {
+  display: block;
+  padding: 0px 15px 0px 15px;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  background-color: blue;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  border-style: none;
+  text-decoration: none;
+}
+
+.create-comment:hover {
+  background-color: #81FFFA;
+  color: white;
+}
+
+.back.create-comment {
+  background-color: green;
+}
+
+.back:hover {
+  background-color: #29FFC3;
+  color: white;
+}
+
+.clear {
+  clear:both; 
+}
+
