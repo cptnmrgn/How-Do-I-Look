@@ -8,7 +8,7 @@ HowDoILook::Application.routes.draw do
 
   resources :users do
       resources :photos do
-        resources :comments, :shallow => true, :except => [:index]
+        resources :comments, :except => [:index]
       end
   end
 

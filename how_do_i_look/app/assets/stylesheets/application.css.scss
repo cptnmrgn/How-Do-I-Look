@@ -332,7 +332,7 @@ nav a:active {
 
 #photo-show {
   display: block;
-  width: 550px;
+  width: 500px;
   padding: 20px;
   margin: 3px 5px 4px 0px;
   float: left;
@@ -397,6 +397,101 @@ nav a:active {
 .photo-option:hover {
   background-color: #29FFC3;
   color: #519600;
+}
+
+#Comments {
+  display: block;
+  width: 400px;
+  float: left;
+  margin-left: 5px;
+}
+
+.comment {
+  background-color: #edeff4;
+  display: block;
+  width: 400px;
+  float: left;
+  margin-bottom: 10px;
+  
+  padding: 15px;
+}
+
+.add-comment {
+  display: block;
+  width: 140px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  margin-right: 5px;
+}
+
+.add-comment:hover {
+  background-color: #81FFFA;
+  color: blue;
+}
+
+.comment-button {
+  display: block;
+  width: 80px;
+  height: 40px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.edit.comment-button {
+  background-color: green;
+}
+
+.edit.comment-button:hover {
+  background-color: #29FFC3;
+  color: white;
+}
+
+.destroy.comment-button {
+  background-color: #CC0000;
+}
+.destroy.comment-button:hover {
+  background-color: #FFABA1;
+  color: white;
+}
+
+.create-comment {
+  display: block;
+  padding: 0px 15px 0px 15px;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  background-color: blue;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  border-style: none;
+  text-decoration: none;
+}
+
+.create-comment:hover {
+  background-color: #81FFFA;
+  color: white;
+}
+
+.back.create-comment {
+  background-color: green;
+}
+
+.back:hover {
+  background-color: #29FFC3;
+  color: white;
 }
 
 .clear {

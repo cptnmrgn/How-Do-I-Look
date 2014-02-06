@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :new]
-  before_action :set_photo, only: [:index, :new]
+  before_action :set_photo, only: [:index, :new, :create]
 
   # GET /comments
   # GET /comments.json
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    @comment = @photo.comments.new
    
   end
 
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @comment = @photo.comments.new(comment_params)
 
     @comment.user = current_user
 

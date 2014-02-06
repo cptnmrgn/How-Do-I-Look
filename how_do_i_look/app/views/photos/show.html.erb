@@ -48,14 +48,21 @@
 
 </div>
 
-<br><br>
+<div id="Comments">
 
 <h2>Comments:</h2>
-<% @photo.comments.each do |comment| %>
-  <%= image_tag comment.user.picture, width: '100' %><p><%= "#{comment.body}" %></p>
-  <p><strong><%= comment.user.name %></strong> posted on <%= comment.created_at %></p>
-  <%= link_to 'Edit', edit_comment_path(comment) if user_signed_in? && current_user.id == @user.id %>
-  <%= link_to 'Destroy', comment, method: :delete if user_signed_in? && current_user.id == @user.id %>
-<% end %>
 
-<%= link_to 'Add a comment', new_user_photo_comment_path(@user, @photo) if user_signed_in? %>
+    
+        <% @photo.comments.each do |comment| %>
+      <div class="comment">
+          <%= image_tag comment.user.picture, width: '100' %><p><%= "#{comment.body}" %></p>
+          <p><strong><%= comment.user.name %></strong> posted on <%= comment.created_at %></p>
+          <%= link_to 'Edit', edit_user_photo_comment_path(@user, @photo, comment), :class => "comment-button edit" if user_signed_in? && current_user.id == comment.user.id %>
+          <%= link_to 'Destroy', [@user, @photo, comment], method: :delete, :class => "comment-button destroy" if user_signed_in? && current_user.id == comment.user.id %>
+      </div>
+        <% end %>
+    
+
+<%= link_to 'Add a comment', new_user_photo_comment_path(@user, @photo), :class => "add-comment" if user_signed_in? %>
+
+</div>

@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     #@comment = @photo.comments.new
-    @like = current_user.likes.where(:photo_id => @photo.id).first
+    @like = current_user.likes.where(:photo_id => @photo.id).first if current_user
     @photo.rating
     @photo.score
   end
