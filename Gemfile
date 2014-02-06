@@ -33,6 +33,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+  # to make heroku work
+  gem 'rails_12factor'
+end
+
 #devise for authentication purposes
 gem 'devise'
 
