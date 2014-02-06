@@ -1,54 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @photo.title %>
-</p>
+<div id="photo-show">
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @photo.image, width: '300' %>
-</p>
+      <h2><%= @photo.title %></h2><p>posted by <%= link_to "#{@photo.user.name}", user_path(@user) %></p>
 
-<!--<%= button_to "Like", photo_likes_path(@photo, kind: :like) %>-->
+      <%= image_tag @photo.image, width: '500' %>
 
+    <!--<%= button_to "Like", photo_likes_path(@photo, kind: :like) %>-->
 
+    <div class="tally">
+      <p><strong>Likes:<%= @photo.likes.where(:kind => :like).count %> &nbsp&nbsp Dislikes:<%= @photo.likes.where(:kind => :dislike).count %></strong></p>
+    </div>
 
-<p>Likes:<%= @photo.likes.where(:kind => :like).count %></p>
-
-<% if @like.present? %>
-  <% if @like.kind == "like" %>
-    <% button_label = "Undo like" %>
-  <% else %>
-    <% button_label = "Undo dislike" %>
-  <% end %> 
-    
-    <%= button_to button_label, [@photo, @like], :method => :delete %>
-<% else %>
-      <%= form_for([@photo, @photo.likes.new]) do |f| %>
-
-          <%= f.hidden_field :kind, :value => :like %>
-          <%= f.submit "Like" %>
-
+    <% if @like.present? %>
+      <% if @like.kind == "like" %>
+        <% button_label = "Undo like" %>
+      <% else %>
+        <% button_label = "Undo dislike" %>
       <% end %> 
-      <%= form_for([@photo, @photo.likes.new]) do |f| %>
+        
+        <%= button_to button_label, [@photo, @like], :method => :delete, :id => "likes", :class => "like" %>
+    <% else %>
+          <%= form_for([@photo, @photo.likes.new]) do |f| %>
 
-            <%= f.hidden_field :kind, :value => :dislike %>
-            <%= f.submit "Dislike" %>
+              <%= f.hidden_field :kind, :value => :like %>
+              <%= f.submit "Like", :id => "likes", :class => "like" %>
 
-      <% end %>
+          <% end %> 
+          <%= form_for([@photo, @photo.likes.new]) do |f| %>
 
-<% end %>
+                <%= f.hidden_field :kind, :value => :dislike %>
+                <%= f.submit "Dislike", :id => "likes", :class => "dislike" %>
 
- <p>Dislikes:<%= @photo.likes.where(:kind => :dislike).count %></p>
+          <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= link_to "#{@photo.user.name}", user_path(@user) %>
-</p>
+    <% end %>
 
-<%= link_to 'Edit', edit_user_photo_path(@user, @photo) if user_signed_in? && current_user.id == @user.id %> |
-<%= link_to 'Photos', user_photos_path(@user) %>
+     
+
+    
+  <br><br><br>
+     <h2>Your outfit has a <span class="<%=@photo.rating%>"><%= @photo.score %>% <%= @photo.rating %></span> rating!</h2>
+
+
+    <%= link_to 'Edit', edit_user_photo_path(@user, @photo),:class => "photo-option" if user_signed_in? && current_user.id == @user.id %> 
+    <%= link_to 'Photos', user_photos_path(@user),:class => "photo-option" %>
+
+</div>
 
 <br><br>
 

@@ -20,6 +20,8 @@ class PhotosController < ApplicationController
   def show
     #@comment = @photo.comments.new
     @like = current_user.likes.where(:photo_id => @photo.id).first
+    @photo.rating
+    @photo.score
   end
 
   # GET /photos/new

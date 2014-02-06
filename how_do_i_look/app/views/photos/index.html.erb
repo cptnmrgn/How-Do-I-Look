@@ -1,33 +1,46 @@
-<h1>Listing photos</h1>
+<h1>Photo-Stream</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image</th>
-      <th>User</th>
-      <th>Uploaded on</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
+      <!-- <p>Title</p>
+      <p>Image</p>
+      <p>User</p>
+      <p>Uploaded on</p> -->
+      
+   
+
+  
     <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.title %></td> 
-        <td><a href="/users/<%= photo.user.id %>/photos/<%= photo.id %>"><%=image_tag photo.image, width: '300' %><a/></td>
-        <td><%= link_to user_path(photo.user) do %><%= photo.user.name %><br><%= image_tag photo.user.picture, width: '150' %><% end %></td>
-        <!-- <td><a href="/users/<%= photo.user.id %>" ><%= photo.user.name %><br><%= image_tag photo.user.picture, width: '150' %><a/></td> -->
-        <td><%= photo.created_at %></td>
-        <td><%= link_to 'Show', user_photo_path(@user, photo) if @user %></td>
-        <td><%= link_to 'Edit', edit_user_photo_path(@user, photo) if @this_is_me %></td>
-        <td><%= link_to 'Destroy', user_photo_path(@user, photo), method: :delete, data: { confirm: 'Are you sure?' } if @this_is_me %></td>
-      </tr>
+      
+      <div id="photo-block">
+          
+          <a href="/users/<%= photo.user.id %>/photos/<%= photo.id %>"><div id="photo"><%=image_tag photo.image, width: '300' %></div><a/>
+          <div class="photo-right">
+            <h2><%= photo.title %></h2>
+            
+            <div id="right-lower">
+
+              <div id="details">
+                  <p>Posted by<br>
+                  <h3><%= link_to user_path(photo.user) do %></h3>
+                  <%= photo.user.name %>
+                  <% end %><br><br>
+                  on <br> <strong><%= photo.created_at %></strong></p>
+              </div>
+              <%= image_tag photo.user.picture, width: '150' %>
+            </div>
+            <!-- <a href="/users/<%= photo.user.id %>" ><%= photo.user.name %><br><%= image_tag photo.user.picture, width: '150' %><a/> -->
+            
+          </div>
+          <%= link_to 'Show', user_photo_path(@user, photo), :class => "options" if @user %>
+          <%= link_to 'Edit', edit_user_photo_path(@user, photo), :class => "options" if @this_is_me %>
+          <%= link_to 'Destroy', user_photo_path(@user, photo), method: :delete, data: { confirm: 'Are you sure?' }, :class => "options" if @this_is_me %>
+        
+      </div>
+
     <% end %>
-  </tbody>
-</table>
+  
+
 
 <br>
 
-<%= link_to 'New Photo', new_user_photo_path(@user) if user_signed_in? && current_user.id == @user.id %>
+<%= link_to 'New Photo', new_user_photo_path(@user), :id => "new-photo" if user_signed_in? && current_user.id == @user.id %>

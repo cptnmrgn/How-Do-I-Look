@@ -255,7 +255,149 @@ nav a:active {
   color: #519600;
 }
 
+// Photos page
 
+#photo-block {
+  display: block;
+  width: 660px;
+  padding: 20px;
+  margin: 3px 5px 4px 0px;
+  float: left;
+  background-color: #edeff4;
+}
+
+#photo {
+  width: 310px;
+  padding-right: 10px;
+  float: left;
+}
+
+.photo-right {
+  display: block;
+  width: 340px;
+  float: left;
+}
+
+.photo-right h2 {
+  margin-top: 0px;
+}
+
+#right-lower {
+  display: block;
+  margin-top: 35px;
+}
+
+#details {
+  display:block;
+  width: 180px;
+  float:left;
+}
+
+#new-photo {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: #519600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  position: fixed;
+  top: 155px;
+  margin-left: 710px;
+}
+
+#new-photo:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
+
+// Photo Show Page
+
+.approval {
+  color: green;
+  font-size: 1.4em;
+}
+
+.disapproval {
+  color: red;
+  font-size: 1.4em;
+}
+
+.neutral {
+  color: #94A198;
+  font-size: 1.4em;
+}
+
+#photo-show {
+  display: block;
+  width: 550px;
+  padding: 20px;
+  margin: 3px 5px 4px 0px;
+  float: left;
+  background-color: #edeff4;
+
+}
+
+#photo-show h2 {
+  margin-top: 0px;
+}
+
+#likes {
+  display: block;
+  width: 100px;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  // background-color: green;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  border-style: none;
+}
+
+.like {
+  background-color: green;
+}
+.like:hover {
+  background-color: #29FFC3;
+  color: white;
+}
+
+.dislike {
+  background-color: #CC0000;
+}
+
+.dislike:hover {
+  background-color: #FFABA1;
+  color: white;
+}
+
+.tally p {
+  font-size: 15px;
+}
+
+.photo-option {
+  display: block;
+  width: 80px;
+  height: 40px;
+  background-color: #519600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+.photo-option:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
 
 .clear {
   clear:both; 
