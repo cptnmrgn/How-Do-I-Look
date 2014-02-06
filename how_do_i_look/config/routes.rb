@@ -1,15 +1,29 @@
 HowDoILook::Application.routes.draw do
   devise_for :users
-  root to: "users#index"
+  
+  
+    root to: "users#index"
+  
   
 
   resources :users do
       resources :photos do
-        resources :comments, :shallow => true
+        resources :comments, :shallow => true, :except => [:index]
       end
   end
 
-  resources :photos, only:[:index]
+  resources :photos, only:[:index] do
+    #The likes resources action is the equivalent to doing the following
+    # post "likes/create"
+    # delete "likes/destroy"
+    # put "likes/update"
+      resources :likes, only:[:create, :destroy, :update]
+  end
+
+  
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

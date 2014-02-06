@@ -10,21 +10,54 @@
   <%= image_tag @photo.image, width: '300' %>
 </p>
 
+<!--<%= button_to "Like", photo_likes_path(@photo, kind: :like) %>-->
+
+
+
+<p>Likes:<%= @photo.likes.where(:kind => :like).count %></p>
+
+<% if @like.present? %>
+  <% if @like.kind == "like" %>
+    <% button_label = "Undo like" %>
+  <% else %>
+    <% button_label = "Undo dislike" %>
+  <% end %> 
+    
+    <%= button_to button_label, [@photo, @like], :method => :delete %>
+<% else %>
+      <%= form_for([@photo, @photo.likes.new]) do |f| %>
+
+          <%= f.hidden_field :kind, :value => :like %>
+          <%= f.submit "Like" %>
+
+      <% end %> 
+      <%= form_for([@photo, @photo.likes.new]) do |f| %>
+
+            <%= f.hidden_field :kind, :value => :dislike %>
+            <%= f.submit "Dislike" %>
+
+      <% end %>
+
+<% end %>
+
+ <p>Dislikes:<%= @photo.likes.where(:kind => :dislike).count %></p>
+
 <p>
   <strong>User:</strong>
   <%= link_to "#{@photo.user.name}", user_path(@user) %>
 </p>
 
-<%= link_to 'Edit', edit_user_photo_path(@user, @photo) %> |
+<%= link_to 'Edit', edit_user_photo_path(@user, @photo) if user_signed_in? && current_user.id == @user.id %> |
 <%= link_to 'Photos', user_photos_path(@user) %>
 
 <br><br>
 
 <h2>Comments:</h2>
 <% @photo.comments.each do |comment| %>
-  <p><%= "#{comment.body}" %></p>
+  <%= image_tag comment.user.picture, width: '100' %><p><%= "#{comment.body}" %></p>
   <p><strong><%= comment.user.name %></strong> posted on <%= comment.created_at %></p>
-
+  <%= link_to 'Edit', edit_comment_path(comment) if user_signed_in? && current_user.id == @user.id %>
+  <%= link_to 'Destroy', comment, method: :delete if user_signed_in? && current_user.id == @user.id %>
 <% end %>
 
-<%= link_to 'Add a comment', new_user_photo_comment_path(@user, @photo) %>
+<%= link_to 'Add a comment', new_user_photo_comment_path(@user, @photo) if user_signed_in? %>

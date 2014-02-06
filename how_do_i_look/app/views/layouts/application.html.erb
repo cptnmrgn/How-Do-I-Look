@@ -5,19 +5,32 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,500' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<%= render partial: 'shared/header' %>
+  <header>
+    <div id="wrapper">
+      <%= render partial: 'shared/header' %>
+    </div>
+  </header>
+  
 
-<% if notice %>
-  <p class="alert alert-notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-error"><%= alert %></p>
-<% end %>
+  <div id="container">
 
-<%= yield %>
+      
 
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+
+      <%= yield %>
+
+      <div class="clear"></div>
+
+  </div>
 </body>
 </html>

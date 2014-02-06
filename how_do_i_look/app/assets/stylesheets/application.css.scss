@@ -1,0 +1,263 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  // background-image: image-url("background-pattern.png");
+  background-color: #E7E7FA;
+  background-color: white;
+  margin: 0px;
+  padding-top: 0px;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+header {
+  background-image: image-url("header_gradient-med.png");
+  height: 70px;
+  color: white;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+
+header a:visited {
+  color: white;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+header a:hover {
+  color: #81FFFA;
+  text-decoration: none;
+  background-color: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+#wrapper {
+  margin: 0 auto;
+  width: 960px;
+  display: block;
+  // padding: 15px 30px 15px 30px;
+  text-align: right;
+}
+
+#container {
+  width: 960px;
+  padding: 30px;
+  margin: 0 auto;
+  background-color: rgba(255,255,255, 1);
+  height: 100%;
+}
+
+#logo {
+  display: block;
+  height: 70px;
+  float: left;
+
+}
+
+#logo h1 {
+  background: url('Logo.svg') no-repeat;
+  margin-top: 7px;
+  height: 70px;
+  width: 300px;
+
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+nav {
+  line-height: 70px;
+  font-size: 18px;
+}
+
+nav a {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: white;
+}
+
+nav a:active {
+  font-size: 20px;
+}
+
+// nav a.current {
+//   font-size: 20px;
+//   color: red;
+// }
+
+#sub-nav {
+  color: #44559f;
+  margin-right: 10px;
+}
+
+#sub-nav a {
+  color: #44559f;
+}
+
+#current_log-in {
+  text-align: left;
+  float: left;
+  font-family: 'Raleway', sans-serif;
+}
+
+// user page
+
+#user {
+  display: block;
+  width: 600px;
+  padding-left: 15px;
+  margin: 2px 5px 3px 0px;
+  float: left;
+  background-color: #edeff4;
+
+}
+
+.thumbnail {
+  width: 300px;
+  float: left;
+}
+
+.user-specs {
+  display: block;
+  float: left;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+#new-user {
+  display:block;
+  width: 150px;
+  height: 40px;
+  background-color: #519600;
+  float:left;
+  position: fixed;
+  top: 155px;
+  margin-left: 625px;
+  line-height: 40px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+
+}
+
+#new-user:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
+
+.options-nav {
+  display: block;
+  width: 300px;
+  float: left;
+  height: 50px;
+
+}
+
+.options {
+  display: block;
+  width: 80px;
+  height: 40px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  margin-right: 5px;
+}
+
+.options:hover {
+  background-color: #81FFFA;
+  color: blue;
+}
+
+// My profile
+
+#profile {
+  display: block;
+  width: 600px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin: 10px 5px 3px 0px;
+  float: left;
+  background-color: #edeff4;
+
+}
+
+#profile-buttons {
+  display: block;
+  width: 200px;
+  height: 40px;
+  float:left;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 15px;
+  
+  
+}
+
+#right-prof {
+  display: block;
+  width: 300px;
+  float: right;
+}
+
+#photo-buttons {
+  display: block;
+  width: 200px;
+  height: 40px;
+  float:left;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.photo-options {
+  display: block;
+  width: 80px;
+  height: 40px;
+  background-color: #519600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  float:left;
+  margin-right: 500px;
+  margin-top: 10px;
+}
+
+.photo-options:hover {
+  background-color: #29FFC3;
+  color: #519600;
+}
+
+
+
+.clear {
+  clear:both; 
+}
+

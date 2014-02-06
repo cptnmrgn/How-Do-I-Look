@@ -1,29 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div id="profile-page">
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div id="profile">
 
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag @user.picture, width: '250' %>
-</p>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Blurb:</strong>
-  <%= @user.blurb %>
-</p>
+      <h2>
+        <%= @user.name %>
+      </h2>
 
-<p>
-  <strong>Location:</strong>
-  <%= @user.location %>
-</p>
+      
+        <%= image_tag @user.picture, width: '250' %>
+      
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <div id="right-prof">
 
-<br><br>
+          <p>
+            <strong>Blurb:</strong><br>
+            "<%= @user.blurb %>"
+          </p>
 
-<%= link_to 'Photos', user_photos_path(@user, @photos) %>
-<!--<%= link_to 'New Photo', new_user_photo_path(@user, @photo) %>
+          <p>
+            <strong>Located in:</strong><br>
+            <%= @user.location %>
+          </p>
+          
+          <div id="profile-buttons">
+          <%= link_to 'Edit', edit_user_path(@user), :class => "options" if @this_is_me %> 
+          <%= link_to 'Back', users_path, :class => "options" %>
+          </div>
+
+      </div>
+      
+
+    </div>
+
+    <div id ="photo-buttons">
+      <%= link_to 'Photos', user_photos_path(@user, @photos), :class => "photo-options" %>
+      <%= link_to 'New Photo', new_user_photo_path(@user, @photo), :class => "photo-options" if @this_is_me%>
+    </div>
+
+  </div>

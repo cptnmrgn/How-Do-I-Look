@@ -9,6 +9,7 @@ class PhotosController < ApplicationController
     if @user
       @photos = @user.photos
     else
+      @user = current_user
       @photos = Photo.all
     end
 
@@ -18,6 +19,7 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     #@comment = @photo.comments.new
+    @like = current_user.likes.where(:photo_id => @photo.id).first
   end
 
   # GET /photos/new
