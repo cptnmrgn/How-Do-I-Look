@@ -31,9 +31,9 @@
             <!-- <a href="/users/<%= photo.user.id %>" ><%= photo.user.name %><br><%= image_tag photo.user.picture, width: '150' %><a/> -->
             
           </div>
-          <%= link_to 'Show', user_photo_path(@user, photo), :class => "options" if @user %>
-          <%= link_to 'Edit', edit_user_photo_path(@user, photo), :class => "options" if @this_is_me %>
-          <%= link_to 'Destroy', user_photo_path(@user, photo), method: :delete, data: { confirm: 'Are you sure?' }, :class => "options" if @this_is_me %>
+          <%= link_to 'Show', user_photo_path(photo.user, photo), :class => "options"  %>
+          <%= link_to 'Edit', edit_user_photo_path(@user, photo), :class => "options" if photo.user == current_user %>
+          <%= link_to 'Destroy', user_photo_path(@user, photo), method: :delete, data: { confirm: 'Are you sure?' }, :class => "options" if photo.user == current_user %>
         
       </div>
 
