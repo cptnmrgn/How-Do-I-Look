@@ -32,8 +32,8 @@
             
           </div>
           <%= link_to 'Show', user_photo_path(photo.user, photo), :class => "options"  %>
-          <%= link_to 'Edit', edit_user_photo_path(@user, photo), :class => "options" if photo.user == current_user %>
-          <%= link_to 'Destroy', user_photo_path(@user, photo), method: :delete, data: { confirm: 'Are you sure?' }, :class => "options" if photo.user == current_user %>
+          <%= link_to 'Edit', edit_user_photo_path(@user, photo), :class => "comment-button edit" if photo.user == current_user %>
+          <%= link_to 'Destroy', user_photo_path(@user, photo), method: :delete, data: { confirm: 'Are you sure?' }, :class => "comment-button destroy" if photo.user == current_user %>
         
       </div>
 
