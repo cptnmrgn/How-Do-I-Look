@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     
-    @users = User.all
+    @users = User.order(:created_at).all.reverse
 
   end
 

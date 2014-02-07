@@ -7,10 +7,10 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     if @user
-      @photos = @user.photos
+      @photos = @user.photos.order(:created_at).reverse
     else
       @user = current_user
-      @photos = Photo.all
+      @photos = Photo.order(:created_at).all.reverse
     end
 
   end
